@@ -45,7 +45,7 @@
 
         .container {
             text-align: center;
-            background: rgba(30, 60, 114, 0.9);
+            background: rgba(43, 48, 58, 0.9);
             border-radius: 50px;
             border-style: double;
             border-color: white;
@@ -68,12 +68,20 @@
         button {
             padding: 12px 20px;
             margin-left: 10px;
-            border: none;
+            border: 3px solid transparent;
             border-radius: 8px;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, border 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            background-color: red;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
 
         .bluetooth {
@@ -81,9 +89,6 @@
 
         }
 
-        .bluetooth:hover{
-            background-color: black;
-        }
 
         button:hover {
             background-color: red;
@@ -103,11 +108,9 @@
         }
 
         .lock, .key {
-            font-size: 5rem;
+            font-size: 6rem;
             position: absolute;
         }
-        
-        /* 🔓 */
 
         .lock {
             left: 50%;
@@ -142,7 +145,7 @@
             <div class="lock">🔒</div>
             <div class="key" id="key">🔑</div>
         </div>
-        <input type="password" id="userInput" placeholder="Type 'home' or 'away'">
+        <input type="text" id="userInput" placeholder="Type 'home' or 'away'">
         <button onclick="submitText()">Senden</button>
         <div id="output"></div>
 
